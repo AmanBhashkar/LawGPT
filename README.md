@@ -27,19 +27,21 @@ You are a tax lawyer and you need to search for a specific law or a section of a
 - Text chunking and vectorization
 - Semantic embedding generation
 
-## ️ Project Structure 
+## 📁 Project Structure 
+
+```
 project_root/
 ├── app/
-│ ├── api/
-│ │ └── routes/
-│ ├── core/
-│ │ ├── config.py
-│ │ └── settings.py
-│ ├── services/
-│ │ ├── document_processor/
-│ │ ├── vector_store/
-│ │ └── agents/
-│ └── main.py
+│   ├── api/
+│   │   └── routes/
+│   ├── core/
+│   │   ├── config.py
+│   │   └── settings.py
+│   ├── services/
+│   │   ├── document_processor/
+│   │   ├── vector_store/
+│   │   └── agents/
+│   └── main.py
 ├── tests/
 ├── docker/
 └── docs/
@@ -81,19 +83,3 @@ docker compose -f docker-compose.dev.yml up
 # Production
 docker compose up
 ```
-
-## 📄 License
-
-[MIT License](LICENSE)
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📞 Support
-
-For support, please open an issue in the GitHub repository.
