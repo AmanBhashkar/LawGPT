@@ -1,7 +1,7 @@
 1. Add autogen to the project.
 2. Add the pinecone search as a tool for autogen.
 3. Automate the extraction of text from the pdfs, chunking and vectorization. Fix the flow.
-3. Add company law search to the project.
-4. Add other laws to the project.
-5. Fix docker setup.
-6. Push images to docker hub.
+4. Add company law search to the project.
+5. Add other laws to the project.
+6. Fix docker setup.
+7. Push images to docker hub.

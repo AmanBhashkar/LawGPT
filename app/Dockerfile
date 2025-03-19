@@ -1,20 +1,26 @@
 FROM python:3.10-slim
 
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libgl1 \
+    libgomp1 \
+    python3-pip
+
 WORKDIR /app
 
-# Install poetry
-RUN pip install uv
-
-# Copy dependency files
-COPY requirements.in ./
-
 # Install dependencies
-RUN uv sync
+COPY pyproject.toml requirements.in ./
 
-# Copy application code
-COPY server/ .
+# Then install other dependencies
+RUN pip install uv 
+RUN uv pip install -r requirements.in --system
 
-# Download NLTK data during build
-RUN python -c "import nltk; nltk.download('punkt', quiet=True); nltk.download('punkt_tab', quiet=True)"
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"] 
+# Install application
+COPY . .
+
+# Install NLTK data
+
+
+# Use PATH-based CMD instead of absolute path
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
