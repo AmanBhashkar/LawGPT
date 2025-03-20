@@ -26,15 +26,16 @@ class PineconeService:
         Args:
             settings: Application settings containing Azure and Pinecone configurations
         """
-        self.embedding_dimension = 768  # Hardcoded dimension for model output
+        # Use the 1536-dimensional model for embeddings
+        self.embedding_dimension = 1536  # Dimension for model output
         self.embeddings = self._initialize_embeddings()
         self.vector_store = self._initialize_vector_store()
 
     def _initialize_embeddings(self) -> SentenceTransformerWrapper:
         """Initialize Sentence Transformer model with wrapper"""
         return SentenceTransformerWrapper(
-            # model_name='sentence-transformers/all-mpnet-base-v2',  # 768-dimensional model
-            model_name='sangmini/msmarco-cotmae-MiniLM-L12_en-ko-ja', # 1536-dimensional model
+            # Use the 1536-dimensional model
+            model_name='sangmini/msmarco-cotmae-MiniLM-L12_en-ko-ja',  # 1536-dimensional model
             device='cpu'
         )
 
@@ -69,7 +70,8 @@ class PineconeService:
         if not text:
             text = "empty_document"
 
-        max_tokens = 768
+        # Adjust max tokens based on model requirements
+        max_tokens = 512  # Typical limit for transformer models
         if len(text) > max_tokens:
             text = text[:max_tokens]
 

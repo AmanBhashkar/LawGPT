@@ -5,3 +5,26 @@
 5. Add other laws to the project.
 6. Fix docker setup.
 7. Push images to docker hub.
+
+
+=================================================================================
+### Architecture of the tax paralegal
+====================================================================================
+
+First the user will ask a question to the tax paralegal.
+
+TaxParalegal
+    |- Orchestrator:formulate_tax_questions
+    |- InformationRetrievalAgent: 
+        - tool: search the vector store for the most relevant documents
+        **later plans:**
+            - tool: search the web for the most relevant documents
+    |- ResponseAgent: Use the InformationRetrievalAgent's response to formulate the answer
+    if the answer is not found then
+        - `orchestrator` will pass the question to the TaxLawyerAgent
+        - TaxLawyerAgent will formulate the answer
+        - ResponseAgent: will relay the answer to the user
+
+
+
+

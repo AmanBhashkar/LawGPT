@@ -1,0 +1,29 @@
+
+# Pinecone
+PINECONE_API_KEY= pinecone api key
+PINECONE_ENVIRONMENT= pinecone environment
+PINECONE_INDEX= index name
+PINECONE_NAMESPACE= namespace
+
+# OpenAI (for ChatGPT integration)
+OPENAI_API_KEY= openai api key
+OPENAI_EMBEDDINGS_MODEL=text-embedding-3-large
+OPENAI_EMBEDDINGS_DIMENSION=1536
+
+# tax paralegal model
+TAX_PARALEGAL_MODEL= gemini model name
+TAX_PARALEGAL_VECTOR_STORE= vector store name
+
+
+# gemini api key
+GEMENI_API_KEY= gemini api key
+
+# Application
+API_URL= api url
+LOG_LEVEL= info
+ENVIRONMENT= development
+
+# Docker
+POSTGRES_USER= postgres user
+POSTGRES_PASSWORD= postgres password
+POSTGRES_DB= postgres db 

@@ -1,0 +1,1 @@
+from .tax import tax_paralegal

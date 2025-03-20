@@ -9,11 +9,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 # Install dependencies
-COPY pyproject.toml requirements.in ./
+COPY requirements.txt ./
 
 # Then install other dependencies
 RUN pip install uv 
-RUN uv pip install -r requirements.in --system
+RUN uv pip install -r requirements.txt --system
 
 
 # Install application

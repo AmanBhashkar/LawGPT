@@ -11,5 +11,7 @@ class Settings:
     PINECONE_API_KEY: str = os.getenv("PINECONE_API_KEY")
     PINECONE_INDEX: str = os.getenv("PINECONE_INDEX")
     PINECONE_NAMESPACE: str = os.getenv("PINECONE_NAMESPACE")
-
+    GEMENI_API_KEY: str = os.getenv("GEMENI_API_KEY")
+    TAX_PARALEGAL_MODEL: str = os.getenv("TAX_PARALEGAL_MODEL")
+    TAX_PARALEGAL_VECTOR_STORE: str = os.getenv("TAX_PARALEGAL_VECTOR_STORE")
 settings = Settings()
