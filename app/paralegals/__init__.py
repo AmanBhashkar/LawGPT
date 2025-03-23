@@ -1,1 +1,1 @@
-from .tax import tax_paralegal
+from .tax import legal_paralegal

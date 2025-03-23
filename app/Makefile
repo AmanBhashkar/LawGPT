@@ -1,4 +1,4 @@
-.PHONY: devb clean force-build rm-containers rm-images nuclear start stop
+.PHONY: devb clean force-build rm-containers rm-images nuclear start stop jump
 
 # Development build and run
 devb:
@@ -28,5 +28,10 @@ start:
 # Clean up resources
 clean:
 	./cleanup.sh 
+
 stop:
 	docker compose -f docker-compose.dev.yml down
+
+# Run Streamlit app
+jump:
+	streamlit run streamlit_app.py
